@@ -1,9 +1,10 @@
 import { fetchData } from "./src/fetchData";
 import { UrlData } from "./src/types";
-import { urlElements } from "./src/url";
+import { fetchUrlElements } from "./src/fetchelemts";
 import { updateContract } from "./src/dataPusher";
 async function main() {
     while (true) {
+        const urlElements = await fetchUrlElements();
         const urlDataArray: UrlData[] = [];
         for (const urlElement of urlElements) {
             try {
